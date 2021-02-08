@@ -14,26 +14,26 @@ import Home from './Home';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Router>
-          <div>
-            <nav>
-              <ul>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/about">About</Link>
-                </li>
-                <li>
-                  <Link to="/users">Users</Link>
-                </li>
-              </ul>
-            </nav>
+    <div>
+      <Router>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">세정수의 값을 구하는 프로그램</Link>
+              </li>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/users">Users</Link>
+              </li>
+            </ul>
+          </nav>
 
-            {/* A <Switch> looks through its children <Route>s and
+          {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
+          <div>
             <Switch>
               <Route path="/about">
                 <About />
@@ -46,8 +46,8 @@ function App() {
               </Route>
             </Switch>
           </div>
-        </Router>
-      </header>
+        </div>
+      </Router>
     </div>
   );
 }
