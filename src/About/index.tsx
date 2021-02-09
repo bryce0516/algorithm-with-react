@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
-import axios from 'axios'
-import puppeteer from 'puppeteer'
+
 export interface AboutProps {
   
 }

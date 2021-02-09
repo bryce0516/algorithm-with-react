@@ -12,6 +12,7 @@ import Users from './Users';
 import Home from './Home';
 import Three from './Compare/three';
 import Four from './Compare/four';
+import Gaus from './Compare/gaus';
 
 
 function App() {
@@ -36,6 +37,9 @@ function App() {
               <li>
                 <Link to="/four">네정수의 값을 구하는 프로그램</Link>
               </li>
+              <li>
+                <Link to="/gaus">가우스 덧셈</Link>
+              </li>
             </ul>
           </nav>
 
@@ -57,6 +61,9 @@ function App() {
               </Route>
               <Route path="/four">
                 <Four />
+              </Route>
+              <Route path="/gaus">
+                <Gaus />
               </Route>
             </Switch>
           </div>
