@@ -30,16 +30,22 @@ const pick = () => {
     }
   }
   result = pickedNum.sort(compareNumbers)
-}
-const start = final.find(el => 
-  JSON.stringify(el) === JSON.stringify(result)
-)
+  const deDuplication = final.find(el => 
+    JSON.stringify(el) === JSON.stringify(result)
+  )
 
-pick()
 
-if (start) {
-  console.log('fail the lotto')
-} else {
-  console.log(result)
+  if (deDuplication) {
+    console.log('fail the lotto')
+  } else {
+    console.log(result)
+  }
+  
 }
+
+for (var i =0; i < 5; i++) {
+  pick();
+}
+
+
 
