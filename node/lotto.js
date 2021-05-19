@@ -10,11 +10,14 @@ const rl = readline.createInterface({
 function compareNumbers(a, b) {
   return a - b;
 }
-const csv = fs.readFileSync("./lotto.csv");
-const records = parse(csv.toString("utf-8"));
+const lottocsv = fs.readFileSync("./lotto.csv");
+const lotto2csv = fs.readFileSync("./lotto2.csv");
+const records = parse(lottocsv.toString("utf-8"));
+const records2 = parse(lotto2csv.toString("utf-8"));
 let toparse = records.map((el) => el.map((el) => parseInt(el)));
+let toparse2 = records2.map((el) => el.map((el) => parseInt(el)));
 const final = toparse.map((el) => el.sort(compareNumbers));
-
+const final2 = toparse2.map((el) => el.sort(compareNumbers));
 // console.log(JSON.stringify(final[0]) === JSON.stringify([7,9,22,27,37,42]))
 
 const lottoMaker = (final, result = []) => {
@@ -35,9 +38,11 @@ const lottoMaker = (final, result = []) => {
   const compareSix = final.find(
     (el) => JSON.stringify(el) === JSON.stringify(sixNumbersSort)
   );
-
+  const compareSix2 = final2.find(
+    (el) => JSON.stringify(el) === JSON.stringify(sixNumbersSort)
+  );
   let arr;
-
+  if (compareSix2) return console.log("말도안되는 숫자조합에 걸림");
   if (compareSix) return console.log("진짜 6개나와서 다시해야함");
 
   let j = 0;
@@ -50,11 +55,11 @@ const lottoMaker = (final, result = []) => {
         }
       });
     });
-    console.log(arr, j);
-    if (arr.length < 5)
+    // console.log(arr.length, j);
+    if (arr.length < 4)
       return compareFive(final, sixNumbersSort, (arr = []), j + 1);
 
-    if (arr.length >= 5) {
+    if (arr.length >= 4) {
       return false;
     }
   };
@@ -76,8 +81,10 @@ const lottoMaker = (final, result = []) => {
   // );
   // console.log("this is arr", arr);
 };
-
-lottoMaker(final);
+for (var i = 0; i < 2; i++) {
+  lottoMaker(final);
+}
+// lottoMaker(final);
 // const pick = () => {
 //   let pickedNum = [];
 //   while (pickedNum.length < 6) {
