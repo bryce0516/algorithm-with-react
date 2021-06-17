@@ -105,9 +105,9 @@ const lottoMaker = (final, final2, result = []) => {
   }
 };
 
-// for (var i = 0; i < 50; i++) {
-//   lottoMaker(final, final2);
-// }
+for (var j = 0; j < 1; j++) {
+  lottoMaker(final, final2);
+}
 
 // lottoMaker(final);
 // const pick = () => {
